@@ -10,6 +10,10 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        score = 0;
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.Save();
+        score = 0;
         // Initialize the score UI
         UpdateScoreUI();
     }

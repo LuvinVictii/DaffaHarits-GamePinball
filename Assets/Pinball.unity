@@ -1761,6 +1761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589092065}
   - component: {fileID: 589092064}
+  - component: {fileID: 589092066}
   m_Layer: 0
   m_Name: Game Over
   m_TagString: Untagged
@@ -1804,6 +1805,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &589092066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589092063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8089ec6fb9139f444b223b485533490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 849360324}
+  audioSource: {fileID: 0}
 --- !u!1 &661536779
 GameObject:
   m_ObjectHideFlags: 0
