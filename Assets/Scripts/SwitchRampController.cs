@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwitchRampController : MonoBehaviour
 {
+    public AudioSource audioSource;
     private enum SwitchState
     {
         Off,
@@ -34,7 +35,11 @@ public class SwitchRampController : MonoBehaviour
         {  
             Debug.Log("Switch hit the ball");
             scoreManager.UpdateScore(200);
-            Toggle();        
+            Toggle();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }        
         }
     }
 
