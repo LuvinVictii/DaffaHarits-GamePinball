@@ -10,6 +10,11 @@ public class SceneLoader : MonoBehaviour
         // Check for left mouse button click
         if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button
         {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                PlayerPrefs.SetInt("Score", 0);
+                PlayerPrefs.Save();
+            }
             // Load the scene based on the sceneName variable
             SceneManager.LoadScene(sceneName);
         }
