@@ -11,7 +11,7 @@ public class LaunchCharging : MonoBehaviour
         if(launcher.isCharging)
         {
             float chargingProgress = launcher.currentLaunchForce;
-            Debug.Log("Charging progress: " + chargingProgress);
+            // Debug.Log("Charging progress: " + chargingProgress);
 
             // Update the value of the charging slider
             chargingSlider.value = chargingProgress/200;

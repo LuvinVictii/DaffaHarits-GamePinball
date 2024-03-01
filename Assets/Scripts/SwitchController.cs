@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
+    public AudioSource audioSourceOn;
+    public AudioSource audioSourceOff;
     private enum SwitchState
     {
         Off,
@@ -34,7 +36,7 @@ public class SwitchController : MonoBehaviour
         {  
             Debug.Log("Switch hit the ball");
             scoreManager.UpdateScore(10);
-            Toggle();        
+            Toggle();      
         }
     }
 
@@ -58,10 +60,18 @@ public class SwitchController : MonoBehaviour
     {
         if (state == SwitchState.On)
         { 
+            if (audioSourceOff != null)
+            {
+                audioSourceOff.Play();
+            }  
             Set(false);       
         }
         else
         {
+            if (audioSourceOn != null)
+            {
+                audioSourceOn.Play();
+            }  
             Set(true);
         }
     }

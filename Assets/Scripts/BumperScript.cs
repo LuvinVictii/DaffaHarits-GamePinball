@@ -6,7 +6,7 @@ public class BumperScript : MonoBehaviour
 {
     public Collider ball;
     public float multiplier;
-
+    public AudioSource audioSource;
     private Renderer renderer;
     private Animator animator;
     public ScoreManager scoreManager;
@@ -25,9 +25,14 @@ public class BumperScript : MonoBehaviour
             scoreManager.UpdateScore(50);
             Rigidbody ballRig = ball.GetComponent<Rigidbody>();
             Vector3 reflectedVelocity = Vector3.Reflect(ballRig.velocity, collision.contacts[0].normal);
-            reflectedVelocity.y = 0f; // Set the Y component to 0 to ignore bouncing on the Y axis
+            reflectedVelocity.y = 0f;
 
             ballRig.velocity = reflectedVelocity * multiplier;
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
 
             animator.SetTrigger("collide");
 
